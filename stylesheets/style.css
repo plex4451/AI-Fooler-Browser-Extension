@@ -2,9 +2,27 @@ body {
     padding: 10px;
 }
 
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.container {
+    min-width: 250px;
+    display: block;
+    flex-direction: column;
+}
+
+.text-input {
+    margin-bottom: 5px;
+}
+
 .std-button {
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
-    float: right;
+}
+
+.img-input {
+
 }
