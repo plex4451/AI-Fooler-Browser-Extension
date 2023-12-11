@@ -4,7 +4,6 @@
   "description": "This extension can manipulate pictures or text so that AI detectors don't flag them as AI generated.",
   "version": "1.0",
   "action": {
-    "default_popup": "./popup/popup.html",
-    "default_icon": "logo.png"
+    "default_popup": "./popup/popup.html"
   }
 }
