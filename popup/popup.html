@@ -15,6 +15,18 @@
             </div>
             <div class="img-input">
                 <p>Wählen sie hier ihr Bild aus, welches verändert werden soll.</p>
+                <div id="drop-area">
+                    <p>Drag &amp; Drop ein Bild hierher</p>
+                </div>
+                <input type="file" id="selectImage" accept="image/*">
+                <div class="loading-container">
+                    <div class="loading-spinner"></div>
+                </div>
+                <div class="text-input" id="containerImagePath" >
+                    <label for="imagePath">Der Pfad vom bearbeiteten Bild lautet:</label>
+                    <textarea id="imagePath" rows="7" cols="40" style="border: 2px solid limegreen"></textarea>
+                    <button class="std-button" id="newImage">Neues Bild bearbeiten</button>
+                </div>
             </div>
         </div>
     </body>
