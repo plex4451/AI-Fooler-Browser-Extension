@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Send message via messaging host: " + text);
 
         // Use messaging host to send the text to the python script
-        chrome.runtime.sendNativeMessage('ai_detector_fooler', { text: text }, onReceivedTextSend);
+        chrome.runtime.sendNativeMessage('ai_detector_fooler', { text: text }, handleMessageResponse);
     });
 
     textarea.addEventListener('input', function () {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-function onReceivedTextSend(response) {
+function handleMessageResponse(response) {
     if (chrome.runtime.lastError) {
         console.error(chrome.runtime.lastError);
         return;
@@ -33,6 +33,7 @@ function onReceivedTextSend(response) {
         console.error("Error parsing JSON response:", error);
     }
 }
+
 
 function resetInput(input) {
     input.style.borderColor = "black";
