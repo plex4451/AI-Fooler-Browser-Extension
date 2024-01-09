@@ -7,6 +7,10 @@ textarea {
     box-sizing: border-box;
 }
 
+#text {
+    border: 2px solid black;
+}
+
 .container {
     min-width: 250px;
     display: block;

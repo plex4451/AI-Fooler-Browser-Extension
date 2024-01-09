@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Use messaging host to send the text to the python script
         chrome.runtime.sendNativeMessage('ai_detector_fooler', { text: text }, onReceivedTextSend);
     });
+
+    textarea.addEventListener('input', function () {
+       resetInput(textarea);
+    });
 });
 
 function onReceivedTextSend(response) {
@@ -24,7 +28,16 @@ function onReceivedTextSend(response) {
         var jsonResponse = typeof response === 'object' ? response : JSON.parse(response);
         var textarea = document.getElementById('text');
         textarea.value = jsonResponse.response;
+        markInputAsSuccessful(textarea);
     } catch (error) {
         console.error("Error parsing JSON response:", error);
     }
+}
+
+function resetInput(input) {
+    input.style.borderColor = "black";
+}
+
+function markInputAsSuccessful(input) {
+    input.style.borderColor = "limegreen";
 }
