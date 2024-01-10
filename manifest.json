@@ -4,8 +4,13 @@
   "description": "This extension can manipulate pictures or text so that AI detectors don't flag them as AI generated.",
   "version": "1.0",
   "permissions": [
-    "nativeMessaging"
+    "nativeMessaging",
+    "contextMenus",
+    "activeTab"
   ],
+  "background": {
+    "service_worker": "./scripts/background.js"
+  },
   "action": {
     "default_popup": "./popup/popup.html"
   }
