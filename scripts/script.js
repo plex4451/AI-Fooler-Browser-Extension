@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.storage.local.get(['text'], function(result) {
         const text = result.text;
         if(text !== undefined) {
+            chrome.storage.local.remove('text', function() {});
             var textarea = document.getElementById('text');
             textarea.innerText = text;
             sendTextToPythonScript(text);
