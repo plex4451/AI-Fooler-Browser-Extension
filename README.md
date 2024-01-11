@@ -44,4 +44,9 @@ On macOS and Linux, the location of the native messaging host's manifest file va
 
 Congratulations! The extension is now successfully installed.
 
+## License
+
+This project is licensed under the [MIT License](LICENSE). 
+For more information, see the [LICENSE](LICENSE) file.
+
 
