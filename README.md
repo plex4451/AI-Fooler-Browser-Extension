@@ -21,6 +21,7 @@ you can find it [here](https://gitlab.uni-hannover.de/informaticup-2024/gruppe-7
 After successfully changing the path, follow the steps according to your operating system.
 
 **Windows**
+
 On Windows, the manifest file can be located anywhere in the file system. The app installer needs to create a registry key and set the default value of this key to the full path of the manifest file. Use the following command, for example:
 ```bash
 REG ADD "HKCU\Software\Google\Chrome\NativeMessagingHosts\ai_detector_fooler" /ve /t REG_SZ /d "C:\path\to\ai_detector_fooler.json" /f
@@ -33,7 +34,7 @@ On macOS and Linux, the location of the native messaging host's manifest file va
 - Google Chrome: `/Library/Google/Chrome/NativeMessagingHosts/ai_detector_fooler.json`
 - Chromium: `/Library/Application Support/Chromium/NativeMessagingHosts/ai_detector_fooler.json`
 
-**Linux (systemwide):**
+**Linux:**
 - Google Chrome: `/etc/opt/chrome/native-messaging-hosts/ai_detector_fooler.json`
 - Chromium: `/etc/chromium/native-messaging-hosts/ai_detector_fooler.json`
 
