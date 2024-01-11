@@ -12,13 +12,17 @@ Since there is currently no release version of the extension available, installa
 7. Click on 'Load unpacked' and select the extension folder.
 8. The extension should now be visible in the list of extensions.
 
+
 Next, communication with the Python script needs to be established using the Native Messaging Host.
 The file `ai_detector_fooler.json` in the extension folder must be placed in a specific location depending on the operating system.
 Before that, open the file and replace the path `"/path/to/browser_communication.py"` in the script for 'AI-Detector-Fooler'
 with the correct path to `"browser_communication.py"`, which is in the Python script folder. If you haven't downloaded the script yet,
 you can find it [here](https://gitlab.uni-hannover.de/informaticup-2024/gruppe-7/ai-dector-fooler).
 
-After successfully changing the path, follow the steps according to your operating system.
+Also in the first line of the `browser_communication.py` file, you need to specify the path to your Python3 interpreter. If you are unsure how to find the path, [this forum post](https://stackoverflow.com/questions/2589711/find-full-path-of-the-python-interpreter) can provide guidance.
+Replace `#!/path/to/python3` with the path to your interpreter.
+
+After successfully changing the paths, follow the steps according to your operating system.
 
 **Windows**
 
