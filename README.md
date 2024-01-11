@@ -82,4 +82,28 @@ Congratulations! The extension is now successfully installed.
 This project is licensed under the [MIT License](LICENSE). 
 For more information, see the [LICENSE](LICENSE) file.
 
+## Roadmap
 
+Here are some planned features for future development:
+
+- **Context Menu Integration:**
+  Add a menu point to the context menu for easier editing of pictures directly from the browser.
+
+- **Chunking Base64 Image Data:**
+  Implement chunking of Base64 image data in the native messaging host, eliminating the need for a file path and enabling the direct display of the edited image.
+
+  
+## Contributing
+
+I am open to contributors, and there are no specific prerequisites for contributing to this project. Whether you're interested in fixing bugs, implementing new features, or suggesting improvements, your contributions are welcome!
+
+Feel free to fork the project, create your branch, make your changes, and submit a pull request. If you're unsure where to start or have questions, don't hesitate to reach out.
+
+## Authors
+
+- **Lou Kielhorn**
+    - Email: [lou.michael.kielhorn@stud.uni-hannover.de](mailto:lou.michael.kielhorn@stud.uni-hannover.de)
+
+## Project Status
+
+Development for this project has stopped. Feel free to fork the project and continue its development.
