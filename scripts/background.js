@@ -8,7 +8,21 @@ chrome.runtime.onInstalled.addListener(function() {
 
 chrome.contextMenus.onClicked.addListener(function(info, tab) {
     if (info.menuItemId === "AI-Detector-Fooler") {
-        console.log("Ausgewählter Text:", info.selectionText);
-
+        var text = info.selectionText;
+        console.log("Ausgewählter Text:", text);
+        chrome.storage.local.set({ ["text"]: text }, function() {});
+        openExtensionPage();
     }
 });
+
+function openExtensionPage() {
+    // Get the URL of the extension's page
+    var extensionPageUrl = chrome.runtime.getURL(`../popup/popup.html`);
+    chrome.windows.create({
+        url: extensionPageUrl,
+        type: "popup",
+        width: 500,
+        height: 600,
+        focused: true
+    });
+}

@@ -3,12 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var textarea = document.getElementById('text');
 
     changeTextButton.addEventListener('click', function() {
-
         var text = textarea.value;
-        console.log("Send message via messaging host: " + text);
-
-        // Use messaging host to send the text to the python script
-        chrome.runtime.sendNativeMessage('ai_detector_fooler', { text: text }, handleMessageResponse);
+        sendTextToPythonScript(text);
     });
 
     textarea.addEventListener('input', function () {
@@ -32,6 +28,15 @@ document.addEventListener('DOMContentLoaded', function() {
     setVisibleImageInput(true);
     setVisibleLoading(false);
     setImagePathVisible(false);
+
+    chrome.storage.local.get(['text'], function(result) {
+        const text = result.text;
+        if(text !== undefined) {
+            var textarea = document.getElementById('text');
+            textarea.innerText = text;
+            sendTextToPythonScript(text);
+        }
+    });
 });
 
 function handleMessageResponse(response) {
@@ -129,9 +134,16 @@ function sendImageToPythonScript(image) {
         }
 
         // Use messaging host to send the image data to the python script
+        console.log("Send message via messaging host: " + base64);
         chrome.runtime.sendNativeMessage('ai_detector_fooler', { image: base64 }, handleMessageResponse);
     };
     reader.readAsDataURL(image);
+}
+
+function sendTextToPythonScript(text) {
+    // Use messaging host to send the text to the python script
+    console.log("Send message via messaging host: " + text);
+    chrome.runtime.sendNativeMessage('ai_detector_fooler', { text: text }, handleMessageResponse);
 }
 
 

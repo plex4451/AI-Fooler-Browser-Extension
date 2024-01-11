@@ -6,11 +6,9 @@
   "permissions": [
     "nativeMessaging",
     "contextMenus",
-    "activeTab"
+    "activeTab",
+    "storage"
   ],
-  "background": {
-    "service_worker": "./scripts/background.js"
-  },
   "action": {
     "default_popup": "./popup/popup.html"
   }
