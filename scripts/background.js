@@ -6,7 +6,7 @@ chrome.runtime.onInstalled.addListener(function() {
     });
 });
 
-chrome.contextMenus.onClicked.addListener(function(info, tab) {
+chrome.contextMenus.onClicked.addListener(function(info) {
     if (info.menuItemId === "AI-Detector-Fooler") {
         var text = info.selectionText;
         console.log("Ausgewählter Text:", text);
