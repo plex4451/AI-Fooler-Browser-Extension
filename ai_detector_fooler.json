@@ -1,0 +1,7 @@
+{
+  "name": "ai_detector_fooler",
+  "description": "AI-Detector-Fooler",
+  "path": "/path/to/browser_communication.py",
+  "type": "stdio",
+  "allowed_origins": ["chrome-extension://flhhennigimdblfealmleipmpfjicegd/"]
+}
