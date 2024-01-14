@@ -26,6 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listener for the 'selectImage' change
     document.getElementById("selectImage").addEventListener('change', fileSelectHandler);
 
+    // Event listener for the drop area
+    var dropArea = document.getElementById("drop-area");
+    dropArea.addEventListener("drop", dropHandler);
+    dropArea.addEventListener("dragover", dragOverHandler);
+    dropArea.addEventListener("dragleave", dragLeaveHandler);
+
     // Set initial visibility states
     setVisibleImageInput(true);
     setVisibleLoading(false);
